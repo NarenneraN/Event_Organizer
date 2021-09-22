@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title>Event Organizer</title>
-  <link rel="stylesheet" href="/CSS/index.css">
+  <link rel="stylesheet" href="public/CSS/index.css">
+  <script src="https://kit.fontawesome.com/afc6005920.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div>
+  <div class="full">
     <div class="top">
       <!-- header event -->
       <p>EVENT ORAGANIZER</p>
@@ -18,31 +19,44 @@
         <!-- Your events -->
         <p>Your Events</p>
         <div class="all_event_names">
-
+             <p>Event-1</p>
+        </div>
+        <div class="all_event_names">
+             <p>Event-2</p>
+        </div>
+        <div class="all_event_names">
+             <p>Event-3</p>
+        </div>
+        <div class="all_event_names">
+             <p>Event-4</p>
+        </div>
+        <div class="all_event_names">
+             <p>Event-5</p>
         </div>
       </div>
       <div class="bottom_right">
         <div class="bottom_right_top">
           <!-- detailed description -->
           <div class="indiv_event_name">
+              <p>indiv event name</p>
 
           </div>
           <div class="indiv_event_desc">
-
+            <p>Event description to be displyed her dynamicaly as user reviews by clicking left hand side events.That's it to be displayed here but i need literally some more to fill this huge awfull gap.</p>
           </div>
         </div>
         <div class="bottom_right_bottom">
           <!-- add event -->
-          <div class="add_event-div">
-            <div class="add_event_name">
-
-            </div>
-            <div class="add_event_desc">
-
-            </div>
+          <div class="add_event_div">
+            <input type="text" class="add_event_name" name="add_event_name" value="" placeholder="Enter Event Name">
+            <textarea class="add_event_desc" name="add_event_desc" placeholder="Enter Event Description Here!">
+Enter Event Description Here!
+</textarea>
           </div>
           <div class="add_event_btn_div">
-             <p>ADD EVENT</p>
+            <span>ADD EVENT</span>
+
+                <button type="submit" name="button"><i class="fas fa-plus-circle"></i></button>
           </div>
         </div>
       </div>
