@@ -161,6 +161,7 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 gap:30px;
+color: #77dddd;
 }
 button{
   cursor: pointer;
@@ -170,4 +171,5 @@ button{
 }
 i{
   font-size: 50px;
+  color: #77dddd;
 }
