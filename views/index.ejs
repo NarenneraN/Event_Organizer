@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Organizer</title>
+  <link rel="stylesheet" href="/CSS/index.css">
+  <script src="https://kit.fontawesome.com/afc6005920.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="full">
+    <div class="top">
+      <!-- header event -->
+      <p>EVENT ORAGANIZER</p>
+    </div>
+    <div class="bottom">
+      <div class="bottom_left">
+        <!-- Your events -->
+        <p>Your Events</p>
+    <%    for(i=1;i<tot_events-1;i++){ %>
+          <div class="all_event_names">
+            <span> <i class="fas fa-caret-right arrow"></i></span>
+
+            <div class="event_para">
+              <p> <%= event_name[i] %> </p>
+            </div>
+
+          </div>
+      <%  } %>
+        
+      </div>
+      <div class="bottom_right">
+        <div class="bottom_right_top">
+
+  <div class="indiv_event_name">
+  <%  if(tot_events==1) { %>
+      <p>Empty Event</p>
+  <%  }else{ %>
+      <p> <%= event_name[tot_events-1] %> </p>
+      <p id="indiv_event_date"> <%= date[tot_events-1] %> </p>
+      <p> <%= time[tot_events-1] %> </p>
+  <%  } %>
+
+
+  </div>
+  <div class="indiv_event_desc">
+      <p> <%= event_desc[tot_events-1] %> </p>
+   </div>
+  <div class="delete_btn_div">
+    <span>Delete<i class="fas fa-trash"></i></span>
+  </div>
+</div>
+
+          <!-- detailed description -->
+
+        <div class="bottom_right_bottom">
+          <!-- add event -->
+          <form class="" action="/" method="post">
+            <div class="add_event_div">
+              <input type="text" class="add_event_name" name="add_event_name" value="" placeholder="Enter Event Name" required>
+              <input type="datetime-local" id="date_time_event" name="date_time_event" required>
+              <textarea class="add_event_desc" name="add_event_desc" placeholder="Enter Event Description Here!" required>Enter Event Description Here!
+      </textarea>
+            </div>
+            <div class="add_event_btn_div">
+              <span>ADD EVENT</span>
+
+              <button type="submit" name="button"><i class="fas fa-plus-circle"></i></button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
