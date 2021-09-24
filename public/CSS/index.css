@@ -143,6 +143,11 @@ flex-direction:column;
   /* word-spacing: 6px; */
   text-transform: capitalize;
   font-family: 'Bebas Neue', cursive;
+  display: flex;
+  gap:20px;
+}
+#indiv_event_date{
+  margin-left: auto;
 }
 .indiv_event_desc{
   padding: 10px 30px;
