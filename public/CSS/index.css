@@ -91,16 +91,21 @@ transition: all 0.2s ease-in-out;
   font-size:30px;
   margin-left: 20px;
 }
+
 .delete_btn_div span{
   line-height:30px;
   display: block;
   color:#171922;
+  cursor:pointer;
 }
 .all_event_names:hover  span{
   left: 2px;
   visibility: visible;
 }
-
+#vis_arrow{
+  left: 2px;
+  visibility: visible;
+}
 .arrow{
   /* font-size:40px; */
   font-size: 60px;
