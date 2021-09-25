@@ -12,6 +12,7 @@ var event_desc=['No Events To Be Displayed😪😪! Add event below to see']
 var date=['0'];
 var time=['0'];
 var show=0;
+var delete_no=0;
 app.get("/",function(req,res){
   console.log("IN GET ->"+show);
   res.render('index',{
@@ -20,15 +21,30 @@ app.get("/",function(req,res){
     event_desc:event_desc,
     date:date,
     time:time,
-    show:show
+    show:show,
+    delete_no:delete_no
   });
 });
 app.get("/event/:event_no",function(req,res){
 
   show=req.params.event_no;
+
   console.log("IN Redir -> "+show);
   res.redirect('/');
 })
+app.get("/event_d/:event_no",function(req,res)
+{
+  delete_no=req.params.event_no;
+  if(delete_no>0)
+  {
+    event_name.splice(delete_no,1);
+    event_desc.splice(delete_no,1);
+    date.splice(delete_no,1);
+    time.splice(delete_no,1);
+  }
+  show=(event_name.length)-1;
+  res.redirect('/');
+});
 //listen Module
 app.listen(3000,function(){
   console.log("server Started!");
