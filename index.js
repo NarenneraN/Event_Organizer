@@ -14,7 +14,6 @@ var time=['0'];
 var show=0;
 var delete_no=0;
 app.get("/",function(req,res){
-  console.log("IN GET ->"+show);
   res.render('index',{
     tot_events:event_name.length,
     event_name:event_name,
@@ -28,8 +27,6 @@ app.get("/",function(req,res){
 app.get("/event/:event_no",function(req,res){
 
   show=req.params.event_no;
-
-  console.log("IN Redir -> "+show);
   res.redirect('/');
 })
 app.get("/event_d/:event_no",function(req,res)
@@ -45,10 +42,7 @@ app.get("/event_d/:event_no",function(req,res)
   show=(event_name.length)-1;
   res.redirect('/');
 });
-//listen Module
-app.listen(3000,function(){
-  console.log("server Started!");
-});
+
 app.post("/",function(req,res){
 var event_name_indiv=req.body.add_event_name;
 var event_desc_indiv= req.body.add_event_desc;
@@ -62,5 +56,11 @@ event_desc.push(event_desc_indiv);
 date.push(date_indiv);
 time.push(time_indiv);
 show=(event_name.length)-1;
+console.log("Event Name -> "+event_name[(event_name.length)-1]);
 res.redirect('/');
+});
+
+//listen Module
+app.listen(process.env.port||3000,function(){
+  console.log("server Started!");
 });
