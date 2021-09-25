@@ -9,6 +9,12 @@
 </head>
 
 <body>
+  <script>
+  var curr_index=0;
+    function change_index(index){
+      curr_index=index;
+    }
+  </script>
   <div class="full">
     <div class="top">
       <!-- header event -->
@@ -18,8 +24,8 @@
       <div class="bottom_left">
         <!-- Your events -->
         <p>Your Events</p>
-    <%    for(i=1;i<tot_events-1;i++){ %>
-          <div class="all_event_names">
+    <%    for(i=1;i<tot_events;i++){ %>
+          <div class="all_event_names" onclick="change_content(<%= i %>)">
             <span> <i class="fas fa-caret-right arrow"></i></span>
 
             <div class="event_para">
@@ -28,7 +34,7 @@
 
           </div>
       <%  } %>
-        
+
       </div>
       <div class="bottom_right">
         <div class="bottom_right_top">
@@ -37,9 +43,9 @@
   <%  if(tot_events==1) { %>
       <p>Empty Event</p>
   <%  }else{ %>
-      <p> <%= event_name[tot_events-1] %> </p>
-      <p id="indiv_event_date"> <%= date[tot_events-1] %> </p>
-      <p> <%= time[tot_events-1] %> </p>
+      <p id="indiv_event_name_p"> <%= event_name[show] %> </p>
+      <p id="indiv_event_date_p"> <%= date[show] %> </p>
+      <p id="indiv_event_time_p"> <%= time[show] %> </p>
   <%  } %>
 
 
@@ -74,6 +80,9 @@
       </div>
     </div>
   </div>
+<script src="event.js">
+
+</script>
 </body>
 
 </html>
