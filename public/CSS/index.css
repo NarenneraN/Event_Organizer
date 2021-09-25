@@ -146,7 +146,7 @@ flex-direction:column;
   display: flex;
   gap:20px;
 }
-#indiv_event_date{
+#indiv_event_date_p{
   margin-left: auto;
 }
 .indiv_event_desc{
