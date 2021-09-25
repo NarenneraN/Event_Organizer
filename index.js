@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app=express();
+// const index = require('event');s
 app.use(express.static('public'));
 //To parse data from html forms
 app.use(bodyParser.urlencoded({extended:true}))
@@ -10,15 +11,24 @@ var event_name=['Empty Event'];
 var event_desc=['No Events To Be Displayed😪😪! Add event below to see']
 var date=['0'];
 var time=['0'];
+var show=0;
 app.get("/",function(req,res){
+  console.log("IN GET ->"+show);
   res.render('index',{
     tot_events:event_name.length,
     event_name:event_name,
     event_desc:event_desc,
     date:date,
-    time:time
+    time:time,
+    show:show
   });
 });
+app.get("/event/:event_no",function(req,res){
+
+  show=req.params.event_no;
+  console.log("IN Redir -> "+show);
+  res.redirect('/');
+})
 //listen Module
 app.listen(3000,function(){
   console.log("server Started!");
@@ -35,5 +45,6 @@ event_name.push(event_name_indiv);
 event_desc.push(event_desc_indiv);
 date.push(date_indiv);
 time.push(time_indiv);
+show=(event_name.length)-1;
 res.redirect('/');
 });
