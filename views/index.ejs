@@ -25,15 +25,27 @@
         <!-- Your events -->
         <p>Your Events</p>
     <%    for(i=1;i<tot_events;i++){ %>
-          <div class="all_event_names" onclick="change_content(<%= i %>)">
-            <span> <i class="fas fa-caret-right arrow"></i></span>
+    <%  if(i==show && show>0){ %>
+        <div class="all_event_names" onclick="change_content(<%= i %>)">
+          <span id="vis_arrow"> <i class="fas fa-caret-right arrow"></i></span>
 
-            <div class="event_para">
-              <p> <%= event_name[i] %> </p>
-            </div>
-
+          <div class="event_para">
+            <p> <%= event_name[i] %> </p>
           </div>
-      <%  } %>
+
+        </div>
+    <%  }  else{  %>
+        <div class="all_event_names" onclick="change_content(<%= i %>)">
+          <span> <i class="fas fa-caret-right arrow"></i></span>
+
+          <div class="event_para">
+            <p> <%= event_name[i] %> </p>
+          </div>
+
+        </div>
+
+
+      <%  } } %>
 
       </div>
       <div class="bottom_right">
@@ -51,10 +63,10 @@
 
   </div>
   <div class="indiv_event_desc">
-      <p> <%= event_desc[tot_events-1] %> </p>
+      <p> <%= event_desc[show] %> </p>
    </div>
   <div class="delete_btn_div">
-    <span>Delete<i class="fas fa-trash"></i></span>
+    <span onclick="deleteit(<%= show %>)">Delete<i class="fas fa-trash"></i></span>
   </div>
 </div>
 
