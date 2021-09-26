@@ -61,6 +61,7 @@ res.redirect('/');
 });
 
 //listen Module
-app.listen(process.env.port||3000,function(){
-  console.log("server Started!");
-});
+app.listen(process.env.PORT||3000,function()
+{
+  console.log("Server Started! On Port 3000");
+})
